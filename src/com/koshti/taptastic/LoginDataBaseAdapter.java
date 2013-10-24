@@ -60,7 +60,7 @@ public class LoginDataBaseAdapter
 	       // Toast.makeText(context, "Number fo Entry Deleted Successfully : "+numberOFEntriesDeleted, Toast.LENGTH_LONG).show();
 	        return numberOFEntriesDeleted;
 		}	
-		public String getSinlgeEntry(String userName)
+		public String getSingleEntry(String userName)
 		{
 			Cursor cursor=db.query("LOGIN", null, " USERNAME=?", new String[]{userName}, null, null, null);
 	        if(cursor.getCount()<1) // UserName Not Exist

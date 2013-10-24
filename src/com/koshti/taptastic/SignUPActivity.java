@@ -23,7 +23,7 @@ public class SignUPActivity extends Activity
 		loginDataBaseAdapter=new LoginDataBaseAdapter(this);
 		loginDataBaseAdapter=loginDataBaseAdapter.open();
 		
-		// Get Refferences of Views
+		// Get References of Views
 		editTextUserName=(EditText)findViewById(R.id.editTextUserName);
 		editTextPassword=(EditText)findViewById(R.id.editTextPassword);
 		editTextConfirmPassword=(EditText)findViewById(R.id.editTextConfirmPassword);
@@ -31,17 +31,15 @@ public class SignUPActivity extends Activity
 		btnCreateAccount=(Button)findViewById(R.id.buttonCreateAccount);
 		btnCreateAccount.setOnClickListener(new View.OnClickListener() {
 		
-		public void onClick(View v) {
-			// TODO Auto-generated method stub
-			
+		public void onClick(View v) {			
 			String userName=editTextUserName.getText().toString();
 			String password=editTextPassword.getText().toString();
 			String confirmPassword=editTextConfirmPassword.getText().toString();
 			
-			// check if any of the fields are vaccant
+			// check if any of the fields are vacant
 			if(userName.equals("")||password.equals("")||confirmPassword.equals(""))
 			{
-					Toast.makeText(getApplicationContext(), "Field Vaccant", Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(), "All fields are mandatory", Toast.LENGTH_LONG).show();
 					return;
 			}
 			// check if both password matches
@@ -61,9 +59,7 @@ public class SignUPActivity extends Activity
 }
 	@Override
 	protected void onDestroy() {
-		// TODO Auto-generated method stub
-		super.onDestroy();
-		
+		super.onDestroy();		
 		loginDataBaseAdapter.close();
 	}
 }
